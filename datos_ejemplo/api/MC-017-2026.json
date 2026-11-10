@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "idContrato": "MC-017-2026",
+      "CodigoProceso": "MC-017-2026",
+      "Nombre": "SUMINISTRO DE VARILLAS FLEXOMÉTRICAS, BOQUILLAS Y MANGUERAS DE PRESIÓN-SUCCIÓN PARA LA LIM",
+      "EntidadContratante": "ALCALDÍA MUNICIPAL DE SAN ROQUE (FICTICIA)",
+      "Objeto": "SUMINISTRO DE VARILLAS FLEXOMÉTRICAS, BOQUILLAS Y MANGUERAS DE PRESIÓN-SUCCIÓN PARA LA LIMPIEZA DEL ALCANTARILLADO MUNICIPAL",
+      "Valor": "15000000",
+      "TextoDepartamento": "Cundinamarca : San Roque",
+      "estado_agrupado": "Abierto",
+      "nombre_fuente": "SECOP 1",
+      "link": "https://agregador.ejemplo/detalle-contrato?random=demo-90012",
+      "FechaPublicacion": "03/Nov/26",
+      "cronogramas": [
+        {
+          "nombre": "Fecha de Publicación",
+          "fecha": "03/Nov/26 - 01:30 pm"
+        },
+        {
+          "nombre": "Fecha y Hora de Cierre del Proceso",
+          "fecha": "06/Nov/26 - 05:00 pm"
+        }
+      ],
+      "documentos_proceso": [
+        {
+          "nombre": "CDP",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90012-1"
+        },
+        {
+          "nombre": "INVITACIÓN",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90012-2"
+        },
+        {
+          "nombre": "ESTUDIOS PREVIOS",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90012-3"
+        }
+      ],
+      "proponentes": [],
+      "ganadores": []
+    }
+  ]
+}

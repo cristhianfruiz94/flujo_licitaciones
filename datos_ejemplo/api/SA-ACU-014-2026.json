@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "idContrato": "SA-ACU-014-2026",
+      "CodigoProceso": "SA-ACU-014-2026",
+      "Nombre": "PRESTACIÓN DEL SERVICIO DE LIMPIEZA, DESOBSTRUCCIÓN Y SUCCIÓN-PRESIÓN DE REDES DE ALCANTAR",
+      "EntidadContratante": "EMPRESA DE ACUEDUCTO Y ALCANTARILLADO DEL SUR E.S.P. (FICTICIA)",
+      "Objeto": "PRESTACIÓN DEL SERVICIO DE LIMPIEZA, DESOBSTRUCCIÓN Y SUCCIÓN-PRESIÓN DE REDES DE ALCANTARILLADO, SUMIDEROS Y POZOS DE INSPECCIÓN CON EQUIPO HIDROSUCCIONADOR TIPO VACTOR, INCLUIDA LA INSPECCIÓN CCTV DE COLECTORES",
+      "Valor": "450000000",
+      "TextoDepartamento": "Valle del Cauca : Cali",
+      "estado_agrupado": "Abierto",
+      "nombre_fuente": "SECOP II",
+      "link": "https://agregador.ejemplo/detalle-contrato?random=demo-90011",
+      "FechaPublicacion": "02/Nov/26",
+      "cronogramas": [
+        {
+          "nombre": "Fecha de Publicación",
+          "fecha": "02/Nov/26 - 07:50 am"
+        },
+        {
+          "nombre": "Fecha y Hora de Cierre del Proceso",
+          "fecha": "11/Nov/26 - 10:00 am"
+        }
+      ],
+      "documentos_proceso": [
+        {
+          "nombre": "ESTUDIOS PREVIOS",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90011-1"
+        },
+        {
+          "nombre": "PLIEGO DE CONDICIONES",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90011-2"
+        },
+        {
+          "nombre": "ANEXO TÉCNICO",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90011-3"
+        },
+        {
+          "nombre": "MATRIZ DE RIESGOS",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90011-4"
+        }
+      ],
+      "proponentes": [],
+      "ganadores": []
+    }
+  ]
+}

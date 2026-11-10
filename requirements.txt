@@ -1,0 +1,3 @@
+# El prototipo funciona solo con la biblioteca estándar de Python 3.10+.
+# openpyxl es opcional: permite escribir la matriz en .xlsx (sin ella, se usa CSV).
+openpyxl>=3.1

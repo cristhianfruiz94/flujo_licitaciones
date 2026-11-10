@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "idContrato": "SI-PTO-022-2026",
+      "CodigoProceso": "SI-PTO-022-2026",
+      "Nombre": "SERVICIO DE HIDROSUCCIÓN Y LIMPIEZA DE SUMIDEROS Y REDES DE ALCANTARILLADO PLUVIAL DE LA T",
+      "EntidadContratante": "SOCIEDAD PORTUARIA DEL CARIBE S.A. (FICTICIA)",
+      "Objeto": "SERVICIO DE HIDROSUCCIÓN Y LIMPIEZA DE SUMIDEROS Y REDES DE ALCANTARILLADO PLUVIAL DE LA TERMINAL",
+      "Valor": null,
+      "TextoDepartamento": "Atlántico : Barranquilla",
+      "estado_agrupado": "Abierto",
+      "nombre_fuente": "Portal privado",
+      "link": "https://agregador.ejemplo/detalle-contrato?random=demo-90014",
+      "FechaPublicacion": "05/Nov/26",
+      "cronogramas": [
+        {
+          "nombre": "Fecha de Publicación",
+          "fecha": "05/Nov/26 - 03:00 pm"
+        },
+        {
+          "nombre": "Fecha y Hora de Cierre del Proceso",
+          "fecha": "07/Nov/26 - 08:00 am"
+        }
+      ],
+      "documentos_proceso": [
+        {
+          "nombre": "TÉRMINOS DE REFERENCIA",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90014-1"
+        }
+      ],
+      "proponentes": [],
+      "ganadores": []
+    }
+  ]
+}

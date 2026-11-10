@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "idContrato": "LP-GOB-009-2026",
+      "CodigoProceso": "LP-GOB-009-2026",
+      "Nombre": "MANTENIMIENTO PREVENTIVO Y CORRECTIVO DEL PARQUE AUTOMOTOR, INCLUIDO EL SUMINISTRO DE REPU",
+      "EntidadContratante": "GOBERNACIÓN DEPARTAMENTAL (FICTICIA)",
+      "Objeto": "MANTENIMIENTO PREVENTIVO Y CORRECTIVO DEL PARQUE AUTOMOTOR, INCLUIDO EL SUMINISTRO DE REPUESTOS AUTOMOTRICES Y LLANTAS",
+      "Valor": "320000000",
+      "TextoDepartamento": "Antioquia : Medellín",
+      "estado_agrupado": "Abierto",
+      "nombre_fuente": "SECOP II",
+      "link": "https://agregador.ejemplo/detalle-contrato?random=demo-90013",
+      "FechaPublicacion": "04/Nov/26",
+      "cronogramas": [
+        {
+          "nombre": "Fecha de Publicación",
+          "fecha": "04/Nov/26 - 08:00 am"
+        },
+        {
+          "nombre": "Fecha y Hora de Cierre del Proceso",
+          "fecha": "20/Nov/26 - 09:00 am"
+        }
+      ],
+      "documentos_proceso": [
+        {
+          "nombre": "PLIEGO DE CONDICIONES",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90013-1"
+        },
+        {
+          "nombre": "ESTUDIOS PREVIOS",
+          "ruta": "https://agregador.ejemplo/descarga-documentos?id=demo-90013-2"
+        }
+      ],
+      "proponentes": [],
+      "ganadores": []
+    }
+  ]
+}

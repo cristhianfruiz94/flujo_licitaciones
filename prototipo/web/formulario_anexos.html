@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cargar anexos · Preparación de oferta (prototipo)</title>
+<style>
+  :root { --azul:#0078D4; --verde:#107C10; --gris:#605e5c; --borde:#e1dfdd; --fondo:#f3f2f1; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Segoe UI", Arial, sans-serif; background:var(--fondo); color:#323130; }
+  main { max-width:760px; margin:32px auto; background:#fff; border:1px solid var(--borde); border-radius:10px; padding:28px 32px; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  .sub { color:var(--gris); margin:0 0 20px; font-size:14px; }
+  .resumen { display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; padding:16px; background:#faf9f8; border-radius:8px; margin-bottom:22px; font-size:14px; }
+  .resumen b { display:block; color:var(--gris); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+  .badge { display:inline-block; padding:2px 10px; border-radius:999px; font-size:13px; font-weight:600; }
+  .PARTICIPAR { background:#dff6dd; color:var(--verde); }
+  .REVISIÓN { background:#fff4ce; color:#8a6d00; }
+  h2 { font-size:16px; margin:22px 0 10px; }
+  .doc { display:grid; grid-template-columns:22px 1fr auto; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--borde); font-size:14px; }
+  .doc input[type=file] { font-size:12px; max-width:220px; }
+  .doc.ok span { text-decoration:line-through; color:var(--gris); }
+  .barra { height:8px; background:var(--borde); border-radius:4px; overflow:hidden; margin:6px 0 0; }
+  .barra div { height:100%; width:0; background:var(--verde); transition:width .3s; }
+  textarea, select { width:100%; font:inherit; padding:8px; border:1px solid var(--borde); border-radius:6px; }
+  button { margin-top:20px; background:var(--verde); color:#fff; border:0; padding:11px 18px; border-radius:6px; font-size:15px; cursor:pointer; }
+  .nota { font-size:12px; color:var(--gris); margin-top:14px; }
+  #ok { display:none; margin-top:16px; padding:12px; background:#dff6dd; border-radius:6px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>📂 Preparación de oferta — carga de anexos</h1>
+  <p class="sub">Formulario pre-llenado desde la alerta de Teams. Prototipo estático: no envía archivos a ningún servidor.</p>
+
+  <section class="resumen" id="resumen"></section>
+
+  <h2>Responsable y estado</h2>
+  <select id="responsable">
+    <option value="">Asignar responsable…</option>
+    <option>Comercial</option><option>Jurídica</option><option>Técnica</option><option>Financiera</option>
+  </select>
+
+  <h2>Checklist de documentos habilitantes <small id="avance" style="color:var(--gris);font-weight:400"></small></h2>
+  <div class="barra"><div id="progreso"></div></div>
+  <div id="docs"></div>
+
+  <h2>Observaciones</h2>
+  <textarea id="obs" rows="3" placeholder="Requisitos especiales del pliego, dudas para observaciones, etc."></textarea>
+
+  <button id="enviar" type="button">Registrar avance</button>
+  <div id="ok">✅ Avance registrado (simulado). En producción se guarda en la matriz y en la carpeta del proceso.</div>
+  <p class="nota">Parámetros admitidos en la URL: codigo, entidad, valor, match, decision, process_id.</p>
+</main>
+<script>
+  const q = new URLSearchParams(location.search);
+  const val = (k, d) => q.get(k) || d;
+  const pesos = v => { const n = Number(String(v).replace(/\D/g, "")); return n ? "$ " + n.toLocaleString("es-CO") : "No informado"; };
+  const decision = val("decision", "PARTICIPAR");
+  document.getElementById("resumen").innerHTML = `
+    <div><b>Proceso</b>${val("codigo", "SA-ACU-014-2026")}</div>
+    <div><b>Entidad</b>${val("entidad", "Entidad de ejemplo")}</div>
+    <div><b>Valor</b>${pesos(val("valor", "450000000"))}</div>
+    <div><b>Evaluación IA</b>${val("match", "100")}/100 · <span class="badge ${decision.split(" ")[0]}">${decision}</span></div>
+    <div style="grid-column:1/-1"><b>ID de seguimiento</b>${val("process_id", "demo")}</div>`;
+
+  const documentos = [
+    "Carta de presentación de la oferta firmada",
+    "Certificado de existencia y representación legal (≤ 30 días)",
+    "RUT actualizado",
+    "RUP vigente y en firme",
+    "Certificados de experiencia (códigos UNSPSC exigidos)",
+    "Estados financieros / indicadores de capacidad financiera",
+    "Certificado de pago de seguridad social y parafiscales",
+    "Antecedentes: Procuraduría, Contraloría, Policía",
+    "Garantía de seriedad de la oferta (póliza)",
+    "Propuesta económica",
+    "Anexo técnico: personal y equipos / fichas técnicas"
+  ];
+  const cont = document.getElementById("docs");
+  documentos.forEach((d, i) => {
+    const fila = document.createElement("label");
+    fila.className = "doc";
+    fila.innerHTML = `<input type="checkbox" id="c${i}"><span>${d}</span><input type="file">`;
+    cont.appendChild(fila);
+  });
+  function actualizar() {
+    const filas = [...cont.querySelectorAll(".doc")];
+    let listos = 0;
+    filas.forEach(f => {
+      const cargado = f.querySelector("input[type=file]").files.length > 0;
+      const marcado = f.querySelector("input[type=checkbox]");
+      if (cargado) marcado.checked = true;
+      f.classList.toggle("ok", marcado.checked);
+      if (marcado.checked) listos++;
+    });
+    document.getElementById("avance").textContent = `· ${listos}/${filas.length} listos`;
+    document.getElementById("progreso").style.width = (100 * listos / filas.length) + "%";
+  }
+  cont.addEventListener("change", actualizar);
+  actualizar();
+  document.getElementById("enviar").onclick = () => { document.getElementById("ok").style.display = "block"; };
+</script>
+</body>
+</html>

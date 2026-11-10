@@ -1,0 +1,23 @@
+# Credenciales
+.env
+*.env
+!.env.example
+
+# Salidas del prototipo
+salida/
+
+# Exports de flujos (pueden contener credenciales y datos reales)
+*.n8n.json
+workflow_export*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# SO / editores
+.DS_Store
+.vscode/
+.idea/
